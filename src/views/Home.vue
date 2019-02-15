@@ -1,18 +1,42 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-  </div>
+  <v-card height="100vh" text :absolute="true" class="wrap">
+    <!-- <transition
+      name="custom-classes-transition"
+      mode="out-in"
+      enter-active-class="animated bounceInLeft"
+      leave-active-class="animated bounceOutRight"
+      :duration="{ enter: 200, leave: 300 }"
+    > -->
+    <router-view
+      style="height: 91vh;
+    overflow: scroll;"
+    ></router-view>
+    <!-- </transition> -->
+    <!-- <div class="headline text-xs-center pa-5">Active: {{ bottomNav }}</div> -->
+    <v-bottom-nav :active.sync="bottomNav" :value="true" fixed app>
+      <v-btn color="teal" text value="recent" to="/zone">
+        <span>任务</span>
+        <v-icon>event_note</v-icon>
+      </v-btn>
+
+      <v-btn color="teal" text value="favorites" to="/honour">
+        <span>荣誉</span>
+        <v-icon>stars</v-icon>
+      </v-btn>
+
+      <v-btn color="teal" text value="nearby" to="/personalCenter">
+        <span>个人中心 </span>
+        <v-icon>account_circle</v-icon>
+      </v-btn>
+    </v-bottom-nav>
+  </v-card>
 </template>
-
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
-
-@Component({
-  components: {
-    HelloWorld
+<script>
+export default {
+  data() {
+    return {
+      bottomNav: "nearby"
+    };
   }
-})
-export default class Home extends Vue {}
+};
 </script>

@@ -11,16 +11,73 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      component: Home
+      component: Home,
+      children: [
+        {
+          name: "任务中心",
+          path: "zone",
+          component: () => import("./views/task/zone.vue")
+        },
+        {
+          name: "荣誉中心",
+          path: "honour",
+          component: () => import("./views/honour/honour.vue")
+        },
+        {
+          name: "荣誉子菜单容器页面",
+          path: "honourchildrenwrap",
+          component: () => import("./views/honour/honourchildrenwrap.vue"),
+          children: [
+            {
+              name: "荣誉点",
+              path: "fame",
+              component: () => import("./views/honour/fame.vue")
+            },
+            {
+              name: "荣誉勋章",
+              path: "medal",
+              component: () => import("./views/honour/medal.vue")
+            },
+            {
+              name: "荣誉商城",
+              path: "honourshopping",
+              component: () => import("./views/honour/honourshopping.vue")
+            }
+          ]
+        },
+        {
+          name: "个人中心",
+          path: "personalCenter",
+          component: () => import("./views/personalCenter/personalCenter.vue")
+        }
+      ]
     },
     {
       path: "/about",
       name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+      component: () => import("./views/About.vue")
+    },
+    {
+      path: "/lander",
+      name: "登陆注册",
+      component: () => import("./views/lander/lander.vue"),
+      children: [
+        {
+          path: "login",
+          name: "登陆",
+          component: () => import("./views/lander/login.vue")
+        },
+        {
+          path: "register",
+          name: "注册",
+          component: () => import("./views/lander/register.vue")
+        },
+        {
+          path: "forgetpassword",
+          name: "忘记密码",
+          component: () => import("./views/lander/forgetpassword.vue")
+        }
+      ]
     }
   ]
 });
