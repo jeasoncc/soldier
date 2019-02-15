@@ -66,7 +66,10 @@
         </v-list-tile-content>
       </v-list-tile>
       <v-divider inset></v-divider>
-      <v-list-tile avatar @click="$router.push({ path: 'honourshopping' })">
+      <v-list-tile
+        avatar
+        @click="$router.push({ path: 'honourchildrenwrap/honourecord' })"
+      >
         <v-list-tile-action>
           <v-icon color="indigo">reorder</v-icon>
         </v-list-tile-action>

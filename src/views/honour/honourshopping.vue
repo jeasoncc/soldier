@@ -1,13 +1,28 @@
 <template>
-  <v-layout>
+  <v-layout style=" position: relative">
     <v-flex xs12 sm6 offset-sm3>
       <v-container grid-list-sm fluid>
         <v-layout row wrap>
-          <v-flex v-for="n in 9" :key="n" xs4 d-flex>
+          <v-flex xs12 d-flex>
             <v-card flat tile class="d-flex">
               <v-img
-                :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-                :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
+                :src="marryImg[1 - 1]"
+                :lazy-src="marryImg[n - 1]"
+                aspect-ratio="1"
+                class="grey lighten-2"
+              ></v-img>
+            </v-card>
+          </v-flex>
+        </v-layout>
+        <v-layout row wrap>
+          <v-btn absolute dark fab top left color="blue darken-2">
+            <v-icon>shopping_cart</v-icon>
+          </v-btn>
+          <v-flex v-for="n in 8" :key="n" xs4 d-flex>
+            <v-card flat tile class="d-flex">
+              <v-img
+                :src="marryImg[n - 1]"
+                :lazy-src="marryImg[n - 1]"
                 aspect-ratio="1"
                 class="grey lighten-2"
               >
@@ -31,3 +46,20 @@
     </v-flex>
   </v-layout>
 </template>
+<script lang="ts">
+import Vue from "vue";
+import Component from "vue-class-component";
+@Component
+export default class HonourShopping extends Vue {
+  marryImg: Array<any> = [
+    require("./../../assets/img/shop/500160912_wx.jpg"),
+    require("./../../assets/img/shop/500179415_wx.jpg"),
+    require("./../../assets/img/shop/500393903_wx.jpg"),
+    require("./../../assets/img/shop/500508235_wx.jpg"),
+    require("./../../assets/img/shop/500550956_wx.jpg"),
+    require("./../../assets/img/shop/500598841_wx.jpg"),
+    require("./../../assets/img/shop/500626838_wx.jpg"),
+    require("./../../assets/img/shop/500723636_wx.jpg")
+  ];
+}
+</script>

@@ -20,10 +20,16 @@
       >
         <v-container fill-height>
           <v-layout align-center>
-            <strong class="display-4 font-weight-regular mr-4">8</strong>
+            <strong class="display-4 font-weight-regular mr-4">
+              {{ dateData.newdate }}
+            </strong>
             <v-layout column justify-end>
-              <div class="headline font-weight-light">Monday</div>
-              <div class="text-uppercase font-weight-light">February 2015</div>
+              <div class="headline font-weight-light">
+                {{ dateData.newmonth }}
+              </div>
+              <div class="text-uppercase font-weight-light">
+                {{ dateData.weekend }}
+              </div>
             </v-layout>
           </v-layout>
         </v-container>
@@ -34,10 +40,20 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
+import "dayjs/locale/zh-cn";
+const dayjs = require("dayjs");
 export default Vue.extend({
+  beforeCreate() {
+    dayjs.locale("zh-cn");
+  },
   data() {
     return {
-      title: "2121"
+      title: "2121",
+      dateData: {
+        newdate: dayjs().format("DD "),
+        newmonth: dayjs().format("YYYY-MM "),
+        weekend: dayjs().format(" dddd")
+      }
     };
   },
   mounted() {

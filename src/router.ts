@@ -42,6 +42,11 @@ export default new Router({
               name: "荣誉商城",
               path: "honourshopping",
               component: () => import("./views/honour/honourshopping.vue")
+            },
+            {
+              name: "荣誉记录",
+              path: "honourecord",
+              component: () => import("./views/honour/honourecord.vue")
             }
           ]
         },
