@@ -15,8 +15,13 @@
           </v-flex>
         </v-layout>
         <v-layout row wrap>
-          <v-btn absolute dark fab top left color="blue darken-2">
-            <v-icon>shopping_cart</v-icon>
+          <v-btn absolute dark fab top right color="blue darken-2">
+            <v-badge left>
+              <span slot="badge">6</span>
+              <v-icon large color="">
+                shopping_cart
+              </v-icon>
+            </v-badge>
           </v-btn>
           <v-flex v-for="n in 8" :key="n" xs4 d-flex>
             <v-card flat tile class="d-flex">

@@ -33,27 +33,6 @@
     <br />
     <v-flex xs12>
       <v-card color="cyan darken-2" class="white--text">
-        <v-card-title primary-title>
-          <div>
-            <div class="headline">网店代运营</div>
-            <br />
-            <span>
-              网店代运营网店代运营网店代运营网店代运营网店代运营网店代运营网店代运营网店代运营网店代运营.</span
-            >
-          </div>
-        </v-card-title>
-        <!-- <v-card-actions>
-          <v-btn flat color="info">接受挑战 </v-btn>
-        </v-card-actions> -->
-        <v-card-actions class="pa-3 ">
-          难易程度
-          <v-spacer></v-spacer>
-          <v-rating value="3" color="yellow"></v-rating>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-    <!-- <v-flex xs12>
-      <v-card color="cyan darken-2" class="white--text">
         <v-layout>
           <v-flex xs5>
             <v-img
@@ -83,9 +62,9 @@
           <v-icon>star_border</v-icon>
         </v-card-actions>
       </v-card>
-    </v-flex> -->
+    </v-flex>
     <br />
-    <!-- <v-flex xs12>
+    <v-flex xs12>
       <v-card color="purple" class="white--text">
         <v-layout row>
           <v-flex xs7>
@@ -114,27 +93,6 @@
           <v-icon>star_border</v-icon>
           <v-icon>star_border</v-icon>
           <v-icon>star_border</v-icon>
-        </v-card-actions>
-      </v-card>
-    </v-flex> -->
-    <v-flex xs12>
-      <v-card color="cyan darken-2" class="white--text">
-        <v-card-title primary-title>
-          <div>
-            <div class="headline">网店代运营</div>
-            <br />
-            <span>
-              网店代运营网店代运营网店代运营网店代运营网店代运营网店代运营网店代运营网店代运营网店代运营.</span
-            >
-          </div>
-        </v-card-title>
-        <!-- <v-card-actions>
-          <v-btn flat color="info">接受挑战 </v-btn>
-        </v-card-actions> -->
-        <v-card-actions class="pa-3 ">
-          难易程度
-          <v-spacer></v-spacer>
-          <v-rating value="3"></v-rating>
         </v-card-actions>
       </v-card>
     </v-flex>

@@ -47,6 +47,11 @@ export default new Router({
               name: "荣誉记录",
               path: "honourecord",
               component: () => import("./views/honour/honourecord.vue")
+            },
+            {
+              name: "修改个人资料",
+              path: "modifiedata",
+              component: () => import("./views/personalCenter/modifiedata.vue")
             }
           ]
         },
@@ -54,6 +59,33 @@ export default new Router({
           name: "个人中心",
           path: "personalCenter",
           component: () => import("./views/personalCenter/personalCenter.vue")
+        },
+        {
+          name: "我的任务",
+          path: "mtask",
+          component: () => import("./views/personalCenter/mtask/mtask.vue"),
+          children: [
+            {
+              name: "全部",
+              path: "allmask",
+              component: () => import("./views/personalCenter/mtask/allmask.vue")
+            },
+            {
+              name: "进行中",
+              path: "underway",
+              component: () => import("./views/personalCenter/mtask/underway.vue")
+            },
+            {
+              name: "待支付",
+              path: "unpaid",
+              component: () => import("./views/personalCenter/mtask/unpaid.vue")
+            },
+            {
+              name: "已完成",
+              path: "completed",
+              component: () => import("./views/personalCenter/mtask/completed.vue")
+            }
+          ]
         }
       ]
     },

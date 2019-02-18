@@ -15,7 +15,7 @@
         </v-avatar>
       </v-card-title>
       <v-img
-        src="https://cdn.vuetifyjs.com/images/cards/forest.jpg"
+        src="https://picsum.photos/300/200/?random"
         gradient="to top, rgba(0,0,0,.44), rgba(0,0,0,.44)"
       >
         <v-container fill-height>

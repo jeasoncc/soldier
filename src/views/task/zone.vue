@@ -44,7 +44,9 @@
       </v-tab-item>
       <v-tab-item>
         <v-card flat>
-          <v-card-text>2121212</v-card-text>
+          <v-card-text>
+            <check></check>
+          </v-card-text>
         </v-card>
       </v-tab-item>
       <v-tab-item>
@@ -58,10 +60,12 @@
 <script>
 import curriculum from "./study/curriculum";
 import examination from "./exam/examination";
+import check from "./check/check";
 export default {
   components: {
     curriculum,
-    examination
+    examination,
+    check
   },
   data() {
     return {

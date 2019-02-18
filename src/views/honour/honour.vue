@@ -1,18 +1,48 @@
 <template>
   <div>
-    <v-toolbar dark color="cyan" height="120">
+    <v-toolbar dark color="cyan" height="120" flat>
       <v-avatar size="80">
         <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
       </v-avatar>
+      <div style="width: 50%;margin: 0 auto;">
+        <v-layout align-center justify-center row fill-height>
+          <v-flex dark>
+            <span>创业特种兵</span>
+          </v-flex>
+          <v-flex>
+            <v-btn
+              outline
+              small
+              fab
+              dark
+              @click="attendance.dialog = true"
+              v-show="!attendance.attendance"
+            >
+              <span>签</span>
+            </v-btn>
+            <v-btn flat icon dark v-show="attendance.attendance">
+              <v-icon>thumb_up</v-icon>
+            </v-btn>
+          </v-flex>
+        </v-layout>
+        <v-dialog v-model="attendance.dialog" max-width="290">
+          <v-card>
+            <v-card-text>
+              签到成功
+            </v-card-text>
 
-      <div
-        style="    width: 50%;
-    margin: 0 auto;"
-      >
-        创业特种兵
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="green darken-1" flat="flat" @click="makeTrue()">
+                确定
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
         <v-progress-linear v-model="valueDeterminate"></v-progress-linear>
       </div>
     </v-toolbar>
+
     <v-list two-line subheader>
       <v-subheader>等级：下士</v-subheader>
 
@@ -92,6 +122,10 @@ import Component from "vue-class-component";
 export default class Honour extends Vue {
   // 初始化数据
   valueDeterminate: number = 10;
+  attendance = {
+    dialog: false as boolean,
+    attendance: false as boolean
+  };
   items = [
     {
       action: "restaurant",
@@ -104,6 +138,10 @@ export default class Honour extends Vue {
       ]
     }
   ];
+  makeTrue() {
+    this.attendance.dialog = false;
+    this.attendance.attendance = true;
+  }
   // 声明周期钩子
   mounted() {}
 
