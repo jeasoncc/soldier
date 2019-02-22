@@ -7,7 +7,6 @@ import Vuetify from "vuetify";
 import "vuetify/dist/vuetify.min.css";
 import "@/assets/stylesheet/main.stylus";
 import "typeface-roboto";
-
 Vue.use(Vuetify, {
   iconfont: "md"
 });

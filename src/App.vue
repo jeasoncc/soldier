@@ -1,5 +1,5 @@
 <template>
-  <v-app id="app" :dark="$store.state.apptheme">
+  <v-app id="backapp" :dark="$store.state.apptheme">
     <router-view></router-view>
   </v-app>
 </template>

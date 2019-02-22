@@ -95,6 +95,21 @@ export default new Router({
       component: () => import("./views/About.vue")
     },
     {
+      path: "/backindex",
+      name: "后台",
+      component: () => import("@/backsrc/views/index.vue"),
+      children: [
+        {
+          path: "home",
+          name: "后台主页",
+          components: {
+            navigation: () => import("@/backsrc/views/navigation/navigation.vue"),
+            toolbar: () => import("@/backsrc/views/toolbar/toolbar.vue")
+          }
+        }
+      ]
+    },
+    {
       path: "/lander",
       name: "登陆注册",
       component: () => import("./views/lander/lander.vue"),

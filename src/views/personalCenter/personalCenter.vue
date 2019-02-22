@@ -71,7 +71,7 @@
 
       <v-divider inset></v-divider>
 
-      <v-list-tile>
+      <v-list-tile @click="$router.push({ path: '/lander/forgetpassword' })">
         <v-list-tile-action>
           <v-icon>lock</v-icon>
         </v-list-tile-action>
