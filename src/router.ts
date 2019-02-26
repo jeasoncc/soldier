@@ -104,7 +104,8 @@ export default new Router({
           name: "后台主页",
           components: {
             navigation: () => import("@/backsrc/views/navigation/navigation.vue"),
-            toolbar: () => import("@/backsrc/views/toolbar/toolbar.vue")
+            toolbar: () => import("@/backsrc/views/toolbar/toolbar.vue"),
+            container: () => import("@/backsrc/views/container/home.vue")
           }
         }
       ]

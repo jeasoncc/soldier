@@ -136,6 +136,9 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    aa() {}
   }
 };
 </script>

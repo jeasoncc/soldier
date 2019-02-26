@@ -6934,6 +6934,10 @@ qs@6.5.2, qs@~6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 
+qs@^6.6.0:
+  version "6.6.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.6.0.tgz#a99c0f69a8d26bf7ef012f871cdabb0aee4424c2"
+
 querystring-es3@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/querystring-es3/-/querystring-es3-0.2.1.tgz#9ec61f79049875707d69414596fd907a4d711e73"
@@ -8592,8 +8596,8 @@ vuelidate@^0.7.4:
   resolved "https://registry.yarnpkg.com/vuelidate/-/vuelidate-0.7.4.tgz#5a0e54be09ac0192f1aa3387d74b92e0945bf8aa"
 
 vuetify@^2.0.0:
-  version "2.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.0.0-alpha.4.tgz#6fa889c79000bec37a07c5c7c03ca36e50e16ff0"
+  version "2.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.0.0-alpha.0.tgz#9c8b82e2a534647d8f5228062708b9b79e3e1651"
 
 vuex@^3.0.1:
   version "3.1.0"

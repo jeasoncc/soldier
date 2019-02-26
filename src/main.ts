@@ -4,9 +4,13 @@ import router from "./router";
 import store from "./store";
 import "./registerServiceWorker";
 import Vuetify from "vuetify";
-import "vuetify/dist/vuetify.min.css";
+// import "vuetify/dist/vuetify.min.css";
 import "@/assets/stylesheet/main.stylus";
 import "typeface-roboto";
+import axios from "axios";
+const QS = require("qs");
+Vue.prototype.qs = QS;
+Vue.prototype.$http = axios;
 Vue.use(Vuetify, {
   iconfont: "md"
 });

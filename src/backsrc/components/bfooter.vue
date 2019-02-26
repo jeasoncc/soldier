@@ -8,16 +8,18 @@
 <script>
 export default {
   mounted() {
-    function* gen(x) {
-      var y = yield x + 2;
-      y = yield x + 9;
-      return y;
+    function* foo() {
+      yield 1;
+      yield 2;
+      yield 3;
+      yield 4;
+      yield 5;
+      return 6;
     }
-    var g = gen(1);
-    console.log(g.next());
-    console.log(g.next());
-    console.log(g.next(20));
-    console.log(g.next(1));
+
+    for (let v of foo()) {
+      console.log(v);
+    }
   }
 };
 </script>
