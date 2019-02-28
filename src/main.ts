@@ -4,7 +4,7 @@ import router from "./router";
 import store from "./store";
 import "./registerServiceWorker";
 import Vuetify from "vuetify";
-// import "vuetify/dist/vuetify.min.css";
+import "vuetify/dist/vuetify.min.css";
 import "@/assets/stylesheet/main.stylus";
 import "typeface-roboto";
 import axios from "axios";

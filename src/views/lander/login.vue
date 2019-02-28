@@ -11,18 +11,13 @@
             required
           ></v-text-field>
 
-          <v-text-field
-            v-model="email"
-            :rules="emailRules"
-            label="密码"
-            required
-          ></v-text-field>
+          <v-text-field v-model="password" label="密码" required></v-text-field>
           <v-layout justify-end>
             <v-btn color="grey darken-1" text to="/lander/forgetpassword">
               <span>忘记密码 ?</span>
             </v-btn>
           </v-layout>
-          <v-btn color="primary" @click="reset" block to="/zone">
+          <v-btn color="primary" @click="loginPost()" block class="">
             登陆
           </v-btn>
           <br />
@@ -37,10 +32,14 @@
   </v-card>
 </template>
 <script>
+import https from "@/https.js";
 export default {
   data: () => ({
     valid: true,
-    name: "",
+    name: "345",
+    password: "111111",
+    user: {},
+    login: "",
     nameRules: [
       v => !!v || "Name is required",
       v => (v && v.length <= 10) || "Name must be less than 10 characters"
@@ -54,8 +53,28 @@ export default {
     items: ["Item 1", "Item 2", "Item 3", "Item 4"],
     checkbox: false
   }),
-
   methods: {
+    loginPost: function() {
+      let params = {
+        cardCode: this.name,
+        password: this.password
+      };
+      https
+        .fetchPost("/user/login.do", params)
+        .then(data => {
+          this.user = data["data"]["data"];
+          this.login = data["data"]["msg"];
+          console.log(this.user);
+          console.log(this.login);
+          if (this.login === "登录成功") {
+            console.log("sas");
+            this.$router.push({ path: "/zone" });
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
     validate() {
       if (this.$refs.form.validate()) {
         this.snackbar = true;
