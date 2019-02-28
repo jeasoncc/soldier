@@ -19,11 +19,7 @@
 .m_lander {
     height 100vh;
     width: 100vw;
+    background-image url("./../../assets/img/400542411_hb.jpg")
+    background-size cover;
     }
-</style>
-<style scoped>
-.m_lander {
-  background: transparent url("./../../assets/img/400542411_hb.jpg") no-repeat
-    fixed center center / cover padding-box border-box;
-}
 </style>

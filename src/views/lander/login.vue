@@ -10,8 +10,20 @@
             label="用户名"
             required
           ></v-text-field>
+          <v-flex xs12 sm6>
+            <v-text-field
+              v-model="password"
+              :append-icon="show1 ? 'visibility_off' : 'visibility'"
+              :rules="[rules.required, rules.min]"
+              :type="show1 ? 'text' : 'password'"
+              name="input-10-1"
+              label="密码"
+              hint="密码至少6位"
+              counter
+              @click:append="show1 = !show1"
+            ></v-text-field>
+          </v-flex>
 
-          <v-text-field v-model="password" label="密码" required></v-text-field>
           <v-layout justify-end>
             <v-btn color="grey darken-1" text to="/lander/forgetpassword">
               <span>忘记密码 ?</span>
@@ -51,7 +63,17 @@ export default {
     ],
     select: null,
     items: ["Item 1", "Item 2", "Item 3", "Item 4"],
-    checkbox: false
+    checkbox: false,
+    show1: false,
+    show2: true,
+    show3: false,
+    show4: false,
+    // password: 'Password',
+    rules: {
+      required: value => !!value || "Required.",
+      min: v => v.length >= 6 || "Min 6 characters",
+      emailMatch: () => "The email and password you entered don't match"
+    }
   }),
   methods: {
     loginPost: function() {
