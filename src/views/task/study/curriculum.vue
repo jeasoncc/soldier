@@ -27,7 +27,12 @@
             </v-card-title>
 
             <v-card-actions>
-              <v-btn flat @click="showmycontent(show)">学习</v-btn>
+              <v-btn
+                flat
+                @click="showmycontent('show')"
+                :color="show ? 'error' : ''"
+                >{{ show ? "退出学习" : "学习" }}</v-btn
+              >
               <!-- <v-btn flat>预览</v-btn> -->
               <v-spacer></v-spacer>
               <v-btn icon>
@@ -39,11 +44,14 @@
             <v-slide-y-transition>
               <v-card-text v-show="show">
                 <div>
-                  {{ value }}
-                  <v-progress-linear
-                    v-model="value"
-                    color="teal"
-                  ></v-progress-linear>
+                  <v-flex xs12>
+                    <v-slider
+                      label="计时中"
+                      readonly
+                      :value="value"
+                      thumb-label="always"
+                    ></v-slider>
+                  </v-flex>
                 </div>
                 I'm a thing. But, like most politicians, he promised more than
                 he could deliver. You won't have time for sleeping, soldier, not
@@ -169,32 +177,27 @@
     </template>
   </div>
 </template>
-<script lang="ts">
-import Vue from "vue";
-export default Vue.extend({
+<script>
+const Timer = require("timer.js");
+export default {
   data() {
     return {
+      picker: "11:15",
+      landscape: false,
       value: 0,
-      some: "jeason" as string,
-      show: false as boolean,
-      show1: false as boolean,
-      show2: false as boolean
+      some: "jeason",
+      show: false,
+      show1: false,
+      show2: false
     };
   },
   methods: {
     sometest() {},
-    showmycontent(prame: any) {
-      this.show = !prame;
-      /**
-       * @description settimout定时器要在时间参数上做文章
-       */
-      for (let i = 0; i < 60; i++) {
-        setTimeout(() => {
-          this.value += 1;
-          console.log(i * 1000);
-        }, i * 1000);
-      }
+    showmycontent(prame) {
+      console.log("sasa");
+      this[prame] = !this[prame];
     }
-  }
-});
+  },
+  mounted() {}
+};
 </script>

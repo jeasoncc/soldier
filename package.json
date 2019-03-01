@@ -17,6 +17,7 @@
     "filepond-plugin-image-preview": "^4.0.3",
     "qs": "^6.6.0",
     "register-service-worker": "^1.5.2",
+    "timer.js": "^1.0.4",
     "typeface-roboto": "^0.0.54",
     "vue": "^2.5.22",
     "vue-class-component": "^6.0.0",
